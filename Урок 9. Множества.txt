@@ -1,0 +1,24 @@
+#Задание 1
+N = int(input("Введите колличество чисел: "))
+numbers = list(map(int, input(f'Введите через пробел {N} чисел: ').split()))
+number_list = set(numbers)
+print(len(number_list))
+
+#Задание 2
+list1 = set(map(int, input('Введите через пробел числа (список 1): ').split()))
+list2 = set(map(int, input('Введите через пробел числа (список 2): ').split()))
+intersection = list1.intersection(list2)
+print(len(intersection))
+print(list1)
+print(list2)
+
+#Задание 3
+list = input('Введите через пробел числа : ')
+numbers = map(int, list.split())
+seen = set()
+for number in numbers:
+  if number in seen:
+    print("YES")
+  else:
+    print("NO")
+seen.add(number)

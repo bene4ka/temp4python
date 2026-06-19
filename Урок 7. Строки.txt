@@ -1,0 +1,10 @@
+#Задание №1
+str = input()
+if str == str[::-1]:
+  print('yes')
+else:
+  print("no")
+
+#Задание 2
+text = input()
+print(' '.join(text.split()))

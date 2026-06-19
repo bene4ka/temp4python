@@ -1,0 +1,19 @@
+#Задание 1
+pet_type = input("Введите вид питомца: ")
+pet_age = input("Введите возраст питомца: ")
+pet_name = input("Введите кличку питомца: ")
+
+print(f"Это {pet_type} по кличке \"{pet_name}\". Возраст: {pet_age} лет.")
+
+#Задание 2
+stages = []
+stage_names = [
+    "первый", "второй", "третий", "четвёртый", 
+    "пятый", "шестой", "седьмой (последний)"
+]
+
+for name in stage_names:
+    stage = input(f"Введите {name} этап развития человека: ")
+    stages.append(stage)
+
+print(*stages, sep='+')

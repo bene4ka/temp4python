@@ -1,0 +1,8 @@
+#Задание 1
+def print_elements(lst, index=0):
+  if index < len(lst):
+    print(lst[index])
+    print_elements(lst, index + 1)
+  else:
+    print("Конец списка")
+    print_elements(my_list)

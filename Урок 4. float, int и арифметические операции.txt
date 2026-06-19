@@ -1,0 +1,25 @@
+#Задание 1
+a = float(input("Введите длину первой стороны прямоугольника: "))
+b = float(input("Введите длину второй стороны прямоугольника: "))
+
+area = a * b
+perimeter = 2 * (a + b)
+
+print(f"Площадь прямоугольника: {area}")
+print(f"Периметр прямоугольника: {perimeter}")
+
+#Задание 2
+number = int(input("Введите пятизначное целое число: "))
+
+units = number % 10
+tens = (number // 10) % 10
+hundreds = (number // 100) % 10
+thousands = (number // 1000) % 10
+tens_of_thousands = (number // 10000) % 10
+
+denominator = tens_of_thousands - thousands
+if denominator == 0:
+    print("Ошибка: разность десятков тысяч и тысяч равна нулю (деление на ноль)")
+else:
+    result = (tens ** units) * hundreds / denominator
+    print(result)
