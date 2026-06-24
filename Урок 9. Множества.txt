@@ -13,12 +13,11 @@ print(list1)
 print(list2)
 
 #Задание 3
-list = input('Введите через пробел числа : ')
-numbers = map(int, list.split())
+numbers = input('Введите числа через пробел: ').split()
 seen = set()
-for number in numbers:
-  if number in seen:
-    print("YES")
-  else:
-    print("NO")
-seen.add(number)
+for num in numbers:
+    if num in seen:
+        print("YES")
+    else:
+        print("NO")
+        seen.add(num)
