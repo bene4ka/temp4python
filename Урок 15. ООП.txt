@@ -5,16 +5,18 @@ def Autobus(self):
   transport.Autobus()
 
 #Задание 2
-class Transport():
-  def init(self, name, max_speed, mileage):
+class Transport:
+  def __init__(self, name, max_speed, mileage):
     self.name = name
     self.max_speed = max_speed
     self.mileage = mileage
 
 class Autobus(Transport):
-  def init(self, name, max_speed, mileage):
-    super().init(name, max_speed, mileage)
+  def __init__(self, name, max_speed, mileage):
+    super().__init__(name, max_speed, mileage)
+
   def seating_capacity(self, capacity=50):
     return f"Вместимость автобуса {self.name}: {capacity} мест"
-  transport = Autobus('Renault Logan', 180, 12)
-  print(transport.seating_capacity())
+
+transport = Autobus('Renault Logan', 180, 12)
+print(transport.seating_capacity())
