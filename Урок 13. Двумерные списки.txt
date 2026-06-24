@@ -1,18 +1,66 @@
 #Задание 1
 import random
-matrix_1 = [[random.randint(-50, 200) for _ in range(10)] for _ in range(10)]
-matrix_2 = [[random.randint(-50, 200) for _ in range(10)] for _ in range(10)]
-print('matrix_1')
-for row1 in matrix_1:
-  print(*row1)
-  print('matrix_2')
-for row2 in matrix_2:
-  print(*row2)
 
-matrix_3 = [[0 for _ in range(10)] for _ in range(10)]
-for i in range(10):
-  for j in range(10):
-    matrix_3[i][j] = matrix_1[i][j] + matrix_2[i][j]
-    print('matrix_3')
-  for row3 in matrix_3:
-    print(*row3)
+# Функция для генерации матрицы 
+def generate_matrix(rows, cols, min_val=-100, max_val=100):
+    matrix = []
+    for i in range(rows):
+        row = []
+        for j in range(cols):
+            row.append(random.randint(min_val, max_val))
+        matrix.append(row)
+    return matrix
+
+# Функция для сложения двух матриц 
+def add_matrices(m1, m2):
+    rows1, cols1 = len(m1), len(m1[0])
+    rows2, cols2 = len(m2), len(m2[0])
+    if rows1 != rows2 or cols1 != cols2:
+        raise ValueError("Матрицы должны иметь одинаковую размерность")
+    
+    result = []
+    for i in range(rows1):
+        row = []
+        for j in range(cols1):
+            row.append(m1[i][j] + m2[i][j])
+        result.append(row)
+    return result
+
+# Демонстрация работы для матриц 10x10
+print("Генерация двух матриц 10x10 со случайными числами от -100 до 100")
+matrix_1 = generate_matrix(10, 10)
+matrix_2 = generate_matrix(10, 10)
+
+print("\nМатрица 1:")
+for row in matrix_1:
+    print(row)
+
+print("\nМатрица 2:")
+for row in matrix_2:
+    print(row)
+
+matrix_3 = add_matrices(matrix_1, matrix_2)
+
+print("\nСумма матриц (Матрица 3):")
+for row in matrix_3:
+    print(row)
+
+# Проверка работы для произвольной размерности (например, 4x3)
+
+print("\n" + "="*50)
+print("Пример для матриц 4x3:")
+m4x3_1 = generate_matrix(4, 3, -50, 50)
+m4x3_2 = generate_matrix(4, 3, -50, 50)
+m4x3_sum = add_matrices(m4x3_1, m4x3_2)
+
+print("Первая матрица 4x3:")
+for row in m4x3_1:
+    print(row)
+
+print("Вторая матрица 4x3:")
+for row in m4x3_2:
+    print(row)
+
+print("Их сумма:")
+for row in m4x3_sum:
+    print(row)
